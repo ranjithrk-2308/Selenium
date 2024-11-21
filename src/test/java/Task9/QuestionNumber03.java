@@ -23,12 +23,12 @@ public class QuestionNumber03 {
 	            // Locate and click the Signup button on the top right corner
 	           driver.findElement(By.id("login-btn")).click();
 	 
-	            // Fill in the Signup form
+	            // Fill in the Sign up form
 				
 				driver.findElement(By.id("email")).sendKeys("ranjithkumaralaguchamy23081999@gmail.com");
 				driver.findElement(By.id("password")).sendKeys("Ranjith@1234");
 	 
-	            // Submit the Signup form
+	            // Submit the Sign up form
 	            WebElement signupSubmitButton = driver.findElement(By.id("login-btn"));
 	            signupSubmitButton.click();
 	 
@@ -44,30 +44,10 @@ public class QuestionNumber03 {
 	                System.out.println("Signup failed.");
 	            }
 	 
-	            // Locate and click the Login button on the top right corner
-	           // WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Login")));
-	//loginButton.click();
-	 
-	            // Fill in the Login form with registered email and password
-	//wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email"))).sendKeys("dummyuser@example.com");
-	//driver.findElement(By.id("password")).sendKeys("DummyPassword123");
-	 
-	            // Submit the Login form
-	           // WebElement loginSubmitButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
-//	loginSubmitButton.click();
-	 
-	            // Wait for the login to complete and verify
-	           // wait.until(ExpectedConditions.titleContains("Dashboard"));
-	 
-	            // Verify login success by checking page title or specific element (assumed here as "Dashboard" in title)
-	         //   if (driver.getTitle().contains("Dashboard")) {
-	            //    System.out.println("Login successful!");
-	          //  } else {
-	          //      System.out.println("Login failed.");
-	          //  }
 	 
 	        } finally {
 	            // Close the browser
+	        	driver.quit();
 	            
 	         }
 	}

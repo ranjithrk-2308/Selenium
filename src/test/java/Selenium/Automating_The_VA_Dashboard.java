@@ -1,18 +1,45 @@
 package Selenium;
 import java.time.Duration;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 
 public class Automating_The_VA_Dashboard {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub.
+	public void method (){
+		WebDriver driver = new ChromeDriver();
 		
+		// Loading the URL in Chrome.
+				driver.get("http://10.17.30.185/navigator/#/dashboard");
+
+		// How to maximize the browser:
+				driver.manage().window().maximize();
+				
+		// adding wait buffer.
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+		//Trying to click the button.
+				driver.findElement(By.xpath("//button['md-raised md-primary md-button md-ink-ripple']")).click();
+				String title = driver.getTitle();
+				System.out.println("Page Title is : " +title);
+				
+		// Sending keys.
+				WebElement username = driver.findElement(By.id("login_username"));
+				username.sendKeys("administrator");
+				WebElement password = driver.findElement(By.id("login_password"));
+				password.sendKeys("welcome");
+				
+				driver.findElement(By.id("auth-login-page-button")).click();
+				driver.findElement(By.id("side-menu-button-2000")).click();
+
+				driver.findElement(By.id("side-menu-button-2060")).click();
+				
+			}
+	
+
+	
+		/*// TODO Auto-generated method stub.
 		// Step 1: launch the Browser.
 		
-		WebDriver driver = new EdgeDriver();
+		WebDriver driver = new ChromeDriver();
 		
 // Loading the URL in Chrome.
 		driver.get("http://10.17.30.185/navigator/#/dashboard");
@@ -46,6 +73,6 @@ public class Automating_The_VA_Dashboard {
 		driver.findElement(By.name("routingNumber")).sendKeys("011103093");
 		driver.findElement(By.id("global-bank-edit-page-es-heading-button")).click();
 
-	}
-
+	*/
+	
 }
